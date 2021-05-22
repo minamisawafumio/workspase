@@ -1,0 +1,314 @@
+<html>
+	<head>
+		<script type="text/javascript" src="./jquery3.5.1.js"></script>
+	</head>
+
+	<div>
+		<button onclick="post_iris01();">iris01CCC</button>
+	</div>
+	<div>
+		<button onclick="post_update02();">更新02(701AA)</button>
+	</div>
+	<div>
+		<button onclick="post_update01();">更新01(701AA)</button>
+	</div>
+	<div>
+		<button onclick="post_postgreSQL01();">postgreSQL01</button>
+	</div>
+	<div>
+		<textarea id="id_textarea_01" rows="20" cols="80"></textarea>
+	</div>
+</html>
+
+<script>
+
+function post_iris01(){
+	let targetUrl = "http://localhost:1324/v1/iris01";
+
+	let json_Person = {
+			"kodomo":
+				[
+					{"koName":"koName01", "koTosi":111},
+					{"koName":"koName02", "koTosi":112},
+					{"koName":"koName03", "koTosi":113},
+					{"koName":"koName04", "koTosi":114},
+					{"koName":"koName05", "koTosi":115},
+				],
+		}
+
+		wJsonSt = JSON.stringify(json_Person)
+
+		let post_data = {
+			"data": wJsonSt
+		}
+
+		$.ajax({
+			cache: false,
+			url:targetUrl,
+			type	: "POST",
+			dataType:"json",
+			data	:post_data,
+		success:function(r){
+			let jsonSt = JSON.stringify(r, null, "\t");
+			document.getElementById("id_textarea_01").value = jsonSt;
+		},
+		error:function(XMLHttpRequest, textStatus, errorThrown){
+			console.log("error")
+			console.log(XMLHttpRequest);
+			console.log(textStatus);
+			console.log(errorThrown);
+		},
+		complete:function(){
+			console.log("complete");
+		}
+	});
+}
+
+
+
+
+function post_postgreSQL01(){
+
+	document.getElementById("id_textarea_01").value = "";
+
+	let targetUrl = "http://localhost:1323/v1/postgreSQL01";
+
+	let json_Person = {
+		"Data01":"data01001",
+		"Data02":1234,
+		"Data03":123.456,
+		"kodomo":
+			[
+				{"koName":"koName01", "koTosi":111},
+				{"koName":"koName02", "koTosi":112},
+				{"koName":"koName03", "koTosi":113},
+				{"koName":"koName04", "koTosi":114},
+				{"koName":"koName05", "koTosi":115},
+			],
+	}
+
+	wJsonSt = JSON.stringify(json_Person)
+
+	let post_data = {
+		"data": wJsonSt
+	}
+
+	$.ajax({
+		cache: false,
+		url:targetUrl,
+		type	: "POST",
+		dataType:"json",
+		data	:post_data,
+		success:function(r){
+			let jsonSt = JSON.stringify(r, null, "\t");
+			document.getElementById("id_textarea_01").value = jsonSt;
+
+
+			from_json = JSON.parse(jsonSt);
+
+
+
+		},
+		error:function(XMLHttpRequest, textStatus, errorThrown){
+			console.log("error")
+			console.log(XMLHttpRequest);
+			console.log(textStatus);
+			console.log(errorThrown);
+		},
+		complete:function(){
+			console.log("complete");
+		}
+	});
+}
+
+
+function post_update02(){
+	let targetUrl = "http://localhost:1323/v1/update02";
+
+	let json_Person = {
+			"Data01":"data01001",
+			"Data02":1234,
+			"Data03":123.456,
+			"kodomo":
+			[
+				{"koName":"koName01", "koTosi":111},
+				{"koName":"koName02", "koTosi":112},
+				{"koName":"koName03", "koTosi":113},
+				{"koName":"koName04", "koTosi":114},
+				{"koName":"koName05", "koTosi":115},
+			],
+	}
+
+	wJsonSt = JSON.stringify(json_Person)
+
+	let post_data = {
+		"data": wJsonSt
+	}
+
+	$.ajax({
+		cache: false,
+		url:targetUrl,
+		type	: "POST",
+		dataType:"json",
+		data	:post_data,
+		success:function(r){
+			let jsonSt = JSON.stringify(r, null, "\t");
+			document.getElementById("id_textarea_01").value = jsonSt;
+		},
+		error:function(XMLHttpRequest, textStatus, errorThrown){
+			console.log("error")
+			console.log(XMLHttpRequest);
+			console.log(textStatus);
+			console.log(errorThrown);
+		},
+		complete:function(){
+			console.log("complete");
+		}
+	});
+}
+
+
+
+function post_update01(){
+
+	let targetUrl = "http://localhost:1323/v1/update01";
+
+	let json_Person = {
+		"Data01":"data02001",
+		"Data02":2234,
+		"Data03":223.456,
+		"kodomo":
+			[
+				{"koName":"koName01", "koTosi":111},
+				{"koName":"koName02", "koTosi":112},
+				{"koName":"koName03", "koTosi":113},
+				{"koName":"koName04", "koTosi":114},
+				{"koName":"koName05", "koTosi":115},
+			],
+	}
+
+	wJsonSt = JSON.stringify(json_Person)
+
+	let post_data = {
+		"data": wJsonSt
+	}
+
+	$.ajax({
+		cache: false,
+		url:targetUrl,
+		type	: "POST",
+		dataType:"json",
+		data	:post_data,
+		success:function(r){
+			let jsonSt = JSON.stringify(r, null, "\t");
+			document.getElementById("id_textarea_01").value = jsonSt;
+		},
+		error:function(XMLHttpRequest, textStatus, errorThrown){
+			console.log("error")
+			console.log(XMLHttpRequest);
+			console.log(textStatus);
+			console.log(errorThrown);
+		},
+		complete:function(){
+			console.log("complete");
+		}
+	});
+}
+
+	// 文字列をUTF8の16進文字列に変換--------------------------------------------------------------------------------------
+	string_to_utf8_hex_string = function (text) {
+		let bytes   = string_to_utf8_bytes(text);
+		let hex_str = bytes_to_hex_string(bytes);
+		return hex_str;
+	};
+
+	// 文字列をUTF8のバイト配列に変換--------------------------------------------------------------------------------------
+	string_to_utf8_bytes = function (text) {
+	    let result = [];
+	    if (text == null)
+	        return result;
+	    for (let i = 0; i < text.length; i++) {
+	        let c = text.charCodeAt(i);
+	        if (c <= 0x7f) {
+	            result.push(c);
+	        } else if (c <= 0x07ff) {
+	            result.push(((c >> 6) & 0x1F) | 0xC0);
+	            result.push((c & 0x3F) | 0x80);
+	        } else {
+	            result.push(((c >> 12) & 0x0F) | 0xE0);
+	            result.push(((c >> 6) & 0x3F) | 0x80);
+	            result.push((c & 0x3F) | 0x80);
+	        }
+	    }
+	    return result;
+	};
+
+	// バイト配列を16進文字列に変換----------------------------------------------------------------------------------------
+	bytes_to_hex_string = function (bytes) {
+	    let	result = "";
+
+	    for (let i = 0; i < bytes.length; i++) {
+			result += byte_to_hex(bytes[i]);
+		}
+		return result;
+	};
+
+	// UTF8の16進文字列をJSONに変換--------------------------------------------------------------------------------------
+	utf8_hex_string_to_json = function (hex_str1) {
+	    if (hex_str1 == undefined) {
+	        console.log('== ERR utf8_hex_string_to_json 引数がundefinedです');
+	        return {};
+	    }
+	    let sendJsonDataSt = utf8_hex_string_to_string(hex_str1);
+	    return JSON.parse(sendJsonDataSt);
+	};
+
+	// UTF8の16進文字列を文字列に変換--------------------------------------------------------------------------------------
+	utf8_hex_string_to_string = function (hex_str1) {
+	    if (hex_str1 == undefined) {
+	        console.log('== ERR utf8_hex_string_to_string 引数がundefinedです');
+	        hex_str1 = "";
+	    }
+		let bytes = hex_string_to_bytes(hex_str1);
+	    return utf8_bytes_to_string(bytes);
+	};
+
+	// バイト配列を16進文字列に変換----------------------------------------------------------------------------------------
+	hex_string_to_bytes = function (hex_str) {
+	    let	result = [];
+
+	    for (let i = 0; i < hex_str.length; i+=2) {
+			result.push(hex_to_byte(hex_str.substr(i,2)));
+		}
+		return result;
+	};
+
+	//UTF8のバイト配列を文字列に変換---------------------------------------------------------------------------------------
+	utf8_bytes_to_string = function (arr) {
+	    if (arr == null)
+	        return null;
+	    let result = "";
+	    let i;
+	    while (i = arr.shift()) {
+	        if (i <= 0x7f) {
+	            result += String.fromCharCode(i);
+	        } else if (i <= 0xdf) {
+	            let c = ((i&0x1f)<<6);
+	            c += arr.shift()&0x3f;
+	            result += String.fromCharCode(c);
+	        } else if (i <= 0xe0) {
+	            let c = ((arr.shift()&0x1f)<<6)|0x0800;
+	            c += arr.shift()&0x3f;
+	            result += String.fromCharCode(c);
+	        } else {
+	            let c = ((i&0x0f)<<12);
+	            c += (arr.shift()&0x3f)<<6;
+	            c += arr.shift() & 0x3f;
+	            result += String.fromCharCode(c);
+	        }
+	    }
+	    return result;
+	};
+
+
+</script>

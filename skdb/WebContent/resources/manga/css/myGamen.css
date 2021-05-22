@@ -1,0 +1,79 @@
+	html {
+		height: 100vh;
+	}
+	body {
+		font-size: 100%;
+		line-height: 140%;
+		font-family: Arial,Helvetica,sans-serif;
+		color: #000;
+		text-align: center;
+		background: #ffc0cb;
+	}
+	#flickscroll{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		margin: auto;
+	}
+	#i_table1{
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		margin: auto;
+		background-color: #FFFFFF;
+	}
+	#Line01 {
+		height:30px;
+	}
+	#MyTable {
+		background: pink;
+	}
+	#inp_1{
+	    padding: 5px;
+		text-align:center;
+	    width: 50px;
+	}
+	#inp_2{
+		background: pink;
+	    height: 100%;
+	    width: 90%;
+	    height:5px;
+	}
+	#inp_3{
+	    padding: 5px;
+		text-align:center;
+	    width: 70px;
+	}
+	#i_2_1 {
+		display:table-cell;
+		width: 5px;
+	}
+	#i_2_2 {
+		display:table-cell;
+		width:100%;
+	}
+	#i_2_3 {
+		display:table-cell;
+		width: 5px;
+	}
+	#i_table9 {
+		position: relative;
+		height: 100%;
+	}
+	#i_table9 #ui-title {
+		position: absolute;
+		top: 50%;
+		-webkit-transform : translateY(-50%);
+		transform : translateY(-50%);
+		left: 45%;
+	}
+
+	input#inp_99 {
+		width: 100%;
+	}
+
+
+	#container {
+
+	}
