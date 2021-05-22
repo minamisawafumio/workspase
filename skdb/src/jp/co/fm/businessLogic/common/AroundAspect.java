@@ -29,7 +29,7 @@ import jp.co.fm.businessLogic.system.SystemService;
 @Component
 public class AroundAspect {
 
-	//private static Logger logger = Logger.getLogger(AroundAspect.class);
+	//private static Logger logger = Logger.getLogger(AroundAspect.class);                
 	private static final Logger logger = LoggerFactory.getLogger(AroundAspect.class);
 
     @Around("execution(* jp.co.fm.businessLogic.service..*.*(..))")
