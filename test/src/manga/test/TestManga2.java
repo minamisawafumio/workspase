@@ -51,8 +51,8 @@ public class TestManga2 {
 		TestManga testManga = new TestManga();
 
 		//開始、終了の番号を指定する
-		int startNo = 1;
-		int endNo = 67;
+		int startNo = 116;
+		int endNo = 171;
 
 		testManga.mangaDataNoSitei(startNo, endNo);
 	}

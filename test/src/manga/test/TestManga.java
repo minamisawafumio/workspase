@@ -30,7 +30,7 @@ public class TestManga {
     public Integer mangaNo;
     public static String MANGA_PATH = "C:/南沢/999_その他/manga/";
 
-    public String mangaTitle = "ママの子宮にザーメンドピュッとしてみない？";
+    public String mangaTitle = "出戻り姫とニート王子";
 
 
 

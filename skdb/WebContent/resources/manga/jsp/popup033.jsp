@@ -99,7 +99,7 @@ $(window).resize(function () {
 	clearTimeout( timeoutId ) ;
 	//タイマー(1ミリ秒後に1回だけ処理を行う)
 	timeoutId = setTimeout( function () {
-		   console.log('picHeight=' + get('picHeight'))
+
 		   //初期画面起動後に１回だけ実行
 		   if (get('startupFlag') == '1') {
 			   startupExecute();
